@@ -25,6 +25,9 @@ jobs:
       - name: Conan version
         run: echo "${{ steps.conan.outputs.version }}"
 
+      - name: Let conan generate a default profile
+        run: conan profile detect
+
       - name: Use conan to install boost
         run: conan install . --output-folder=build --build=missing
 
