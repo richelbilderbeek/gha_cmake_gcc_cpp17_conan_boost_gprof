@@ -4,6 +4,8 @@
 #include <numeric>
 #include <vector>
 
+#include <boost/config.hpp>
+
 std::vector<int> sort_a(std::vector<int> v)
 {
  const auto sz = v.size();
@@ -49,6 +51,8 @@ int main()
   #ifdef __clang__
   #error No clang in this example please
   #endif
+
+  std::cout << "Code is compiled with: " << BOOST_COMPILER << '\n';
 
   const auto v = create_series(500'000);
   const auto a = sort_a(v);
