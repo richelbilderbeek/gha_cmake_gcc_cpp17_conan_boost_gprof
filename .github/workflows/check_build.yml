@@ -18,6 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Use conan to install boost
+        run: conan install . --output-folder=build --build=missing
+
       - name: Set up CMake build folder for release mode, thanks https://stackoverflow.com/a/64719718
         run: cmake -B build . -DCMAKE_BUILD_TYPE=Release 
 
