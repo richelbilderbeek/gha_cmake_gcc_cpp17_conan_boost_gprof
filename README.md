@@ -10,7 +10,8 @@ The goal of this project is to have a clean GitHub Actions build, with specs:
  * Build system: `CMake`
  * C++ compiler: `g++`
  * C++ version: `C++17`
- * Libraries: `STL` only
+ * Package manager: `conan`
+ * Libraries: `STL` and Boost
  * Code coverage: none
  * Profiling: `gprof`
  * Source: one single file, `main.cpp`
@@ -19,10 +20,9 @@ More complex builds:
  * [none]
 
 Equally complex builds:
-
- * Use `qmake` (instead of `CMake`): [gha_qmake_gcc_cpp17_gprof](https://github.com/richelbilderbeek/gha_qmake_gcc_cpp17_gprof)
- * Use `clang` (instead of `g++`): [gha_cmake_clang_cpp17_gprof](https://github.com/richelbilderbeek/gha_cmake_clang_cpp17_gprof)
+ * [none]
 
 Less complex builds:
- * [none]
+
+ * No Boost, no `conan`: [gha_cmake_gcc_cpp17_gprof](https://github.com/richelbilderbeek/gha_cmake_gcc_cpp17_gprof)
  
