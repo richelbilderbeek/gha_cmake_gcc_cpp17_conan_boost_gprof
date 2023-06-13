@@ -31,12 +31,20 @@ jobs:
       - name: Use conan to install boost
         run: conan install . --output-folder=build --build=missing
 
+
       # Do not overwrite the conan file
       #- name: Set up CMake build folder for release mode, thanks https://stackoverflow.com/a/64719718
       #  run: cmake -B build . -DCMAKE_BUILD_TYPE=Release 
 
-      - name: Run CMake
-        run: cmake --build build 
+      #- name: Run CMake
+      #  run: cmake --build build 
+
+      - name: Run CMake, from https://docs.conan.io/2/tutorial/consuming_packages/build_simple_cmake_project.html
+        run: |
+          cd build
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
+          cmake --build .
+
 
       - name: Run the program
         run: ./build/gha_cmake_gcc_cpp17_gprof
