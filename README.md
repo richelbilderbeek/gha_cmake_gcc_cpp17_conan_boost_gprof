@@ -24,5 +24,6 @@ Equally complex builds:
 
 Less complex builds:
 
+ * No Boost, no `gprof`: [gha_cmake_gcc_cpp17_conan](https://github.com/richelbilderbeek/gha_cmake_gcc_cpp17_conan)
  * No Boost, no `conan`: [gha_cmake_gcc_cpp17_gprof](https://github.com/richelbilderbeek/gha_cmake_gcc_cpp17_gprof)
  
