@@ -43,6 +43,7 @@ jobs:
           cd build
           cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
           cmake --build .
+          cd ..
 
       - name: Find the executable
         run: find . | egrep gcc_cpp17
