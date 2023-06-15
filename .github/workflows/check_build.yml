@@ -44,12 +44,14 @@ jobs:
           cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
           cmake --build .
 
+      - name: Find the executable
+        run: find . | egrep gcc_cpp17
 
       - name: Run the program
-        run: ./build/gha_cmake_gcc_cpp17_conan_boost_gprof
+        run: ./gha_cmake_gcc_cpp17_conan_boost_gprof
 
       - name: Produce the gprof log
-        run: gprof ./build/gha_cmake_gcc_cpp17_conan_boost_gprof > gprof.log
+        run: gprof ./gha_cmake_gcc_cpp17_conan_boost_gprof > gprof.log
 
       - name: Read the 100 top lines
         run: head gprof.log -n 100
