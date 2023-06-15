@@ -46,7 +46,7 @@ jobs:
           cd ..
 
       - name: Find the executable
-        run: find . | egrep gcc_cpp17
+        run: find .
 
       - name: Run the program
         run: ./gha_cmake_gcc_cpp17_conan_boost_gprof
